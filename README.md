@@ -45,5 +45,15 @@ rtmp_host_port:1935
 docker run --name some-name -e PROTO=https -e STREAM_HOST=server.domain.com -p 80:80 -p 1935:1935 -d image_name
 ```
 
+# How to Stream your Desktop into your container
+
+I've put a ffmpeg2nginx.sh script with options. You can use it to stream your Desktop :
+```
+./ffmpeg2nginx.sh -o <your-screen-size> -r <frame-rate> -o <output-stream-size> -i <IP-or-FQDN>
+```
+
+Enjoy !
+
+
 Best Regards,
 pixhub.
