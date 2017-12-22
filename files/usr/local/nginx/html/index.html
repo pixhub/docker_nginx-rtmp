@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+     <meta charset="utf-8">
+
+        <title>Stream Nunu</title>
+     
+     <!-- optimize mobile versions -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+        <!-- Flowplayer commercial skin -->
+     <link rel="stylesheet" href="//releases.flowplayer.org/7.2.1/commercial/skin/skin.css">
+     
+     <!-- Minimal styling for this standalone page, can be removed -->
+     <link rel="stylesheet" href="//demos.flowplayer.com/media/css/demo.css">
+   
+     <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
+
+      <style>
+        /* show all controls, except quality selection, in poster state */
+        .is-poster.flowplayer .fp-controls {
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+        }
+        .is-poster.flowplayer .fp-qsel {
+          display: none;
+        }
+
+        body{
+          background: #ffffff; /* Old browsers */
+          background: -moz-linear-gradient(left, #ffffff 0%, #dbcfc9 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(left, #ffffff 0%,#dbcfc9 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to right, #ffffff 0%,#dbcfc9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dbcfc9',GradientType=1 ); /* IE6-9 */
+        }
+
+        h1{
+          font-family: 'ABeeZee', sans-serif;
+          font-size:48px;
+          text-transform: uppercase;
+          margin-bottom: 0;
+        }
+
+        h2{
+          font-size:24px;
+          font-family: 'ABeeZee', sans-serif;
+          text-transform: uppercase;
+          margin-top:0;
+          padding-top:0;
+        }
+      </style>
+
+        <!-- Flowplayer depends on jquery 1.7.2+ for video tag based installations -->
+     <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+           <!-- Flowplayer commercial library -->
+     <script src="//releases.flowplayer.org/7.2.1/commercial/flowplayer.min.js"></script>
+           <!-- The hlsjs plugin (light) for playback of HLS without Flash in modern browsers -->
+     <script src="//releases.flowplayer.org/hlsjs/flowplayer.hlsjs.light.min.js"></script>
+                 
+     
+      <script>
+        flowplayer(function (api) {
+          // go back to poster (or splash) state on finish
+          api.on("finish", function () {
+            api.unload();
+          });
+        });
+      </script>
+
+  </head>
+
+  <body>
+
+     <div id="content">
+
+        <h1>pixhub</h1>
+        <h2>Streaming</h2>
+        <hr>
+        <br><br>
+        <div class="flowplayer fp-slim is-closeable"
+             data-ratio="0.500" data-key="$775445646737769" data-embed="false">
+           <video>
+              <source type="application/x-mpegurl" src="§PROTO://§STREAM_HOST/live/index.m3u8">
+           </video>
+        </div>
+
+
+  </body>
+</html>
