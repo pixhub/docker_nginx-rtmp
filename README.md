@@ -12,3 +12,38 @@ First, pull and build the image :
 git clone git://github.com/pixhub/docker_nginx-rtmp
 docker build -t some-name docker_nginx-rtmp
 ```
+
+### Env Vars
+
+In this image, you can parse some values like the internet protocol (http/https) and the URL you want the Web server to be
+reached from the outside.
+
+The Nginx Web Server is not configured with HTTPS. For that, you must put it behind a reverse proxy.
+By default, values are :
+```
+PROTO=http
+STREAM_HOST=localhost
+```
+
+Example behind a reverse PROXY :
+```
+PROTO=https
+STREAM_HOST=server.domain.com
+```
+
+### Ports
+
+By defaults, http ans rtmp ports are configured in the container so :
+```
+http_host_port:80
+rtmp_host_port:1935
+```
+
+## Docker RUN
+
+```
+docker run --name some-name -e PROTO=https -e STREAM_HOST=server.domain.com -p 80:80 -p 1935:1935 -d image_name
+```
+
+Best Regards,
+pixhub.
