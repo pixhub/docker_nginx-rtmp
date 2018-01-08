@@ -55,7 +55,7 @@ FFMPEG="/usr/bin/ffmpeg"
 
 QUAL=ultrafast
 
-$FFMPEG -f x11grab -s $INRES -framerate $FPS -i :1.0 \
+$FFMPEG -f x11grab -s $INRES -framerate $FPS -i $DISPLAY \
 	      -f pulse -ac 2 -i default -c:v libx264 -preset fast -pix_fmt yuv420p \
 	      -s $OUTRES -c:a aac -b:a 160k -ar 44100 -threads 0 \
 	      -f flv "rtmp://$IP:1935/live"
