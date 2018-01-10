@@ -1,12 +1,16 @@
 #!/bin/sh
 
+if [ ! -z $SERVER_NAME ]
+   then
+	sed -i -e "s/§SERVER_NAME/$SERVER_NAME/g" /usr/local/nginx/conf/nginx.conf
+   else
+	sed -i -e "s/§SERVER_NAME/localhost/g" /usr/local/nginx/conf/nginx.conf
+
 if [ ! -z $STREAM_HOST ]
    then
-        sed -i -e "s/§STREAM_HOST/$STREAM_HOST/g" /usr/local/nginx/conf/nginx.conf \
-               -e "s/§STREAM_HOST/$STREAM_HOST/g" /usr/local/nginx/html/index.html
+        sed -i -e "s/§STREAM_HOST/$STREAM_HOST/g" /usr/local/nginx/html/index.html
    else
-        sed -i -e "s/§STREAM_HOST/localhost/g" /usr/local/nginx/conf/nginx.conf \
-               -e "s/§STREAM_HOST/localhost/g" /usr/local/nginx/conf/nginx.conf
+        sed -i -e "s/§STREAM_HOST/localhost/g" /usr/local/nginx/html/index.html
 fi
 
 if [ ! -z  $PROTO ]
