@@ -55,7 +55,7 @@ For example, you can try in local by binding these ports on your local machine l
 
 If the container is behind a Reverse PROXY with HTTPS :
 ```
-docker run --name some-name -e PROTO=https -e SERVERNAME=server.domain.com -e STREAM_HOST=server.domain.com -p 80:80 -p 1935:1935 -d image_name
+docker run --name some-name -e PROTO=https -e SERVERNAME=server.domain.com -e STREAM_HOST=server.domain.com -p 80:80 -p 1935:1935 -d pixhub/docker_nginx-rtmp
 ```
 Running in local (don't forget to add the following in your /etc/hosts file : `127.0.0.1 server.domain.local`
 ```
