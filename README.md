@@ -49,7 +49,7 @@ docker run --name some-name -e PROTO=https -e STREAM_HOST=server.domain.com -p 8
 
 I've put a ffmpeg2nginx.sh script with options. You can use it to stream your Desktop :
 ```
-./ffmpeg2nginx.sh -o <your-screen-size> -r <frame-rate> -o <output-stream-size> -i <IP-or-FQDN>
+./ffmpeg2nginx.sh -s <your-screen-size> -r <frame-rate> -o <output-stream-size> -i <IP-or-FQDN>
 ```
 
 Enjoy !
