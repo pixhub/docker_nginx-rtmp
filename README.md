@@ -37,7 +37,7 @@ or
 PROTO=https
 SERVER_NAME=server.domain.local
 STREAM_HOST=server2.domain.local
-
+```
 ### Ports
 
 By defaults, http ans rtmp ports are configured in the container so :
@@ -60,7 +60,7 @@ docker run --name some-name -e PROTO=https -e SERVERNAME=server.domain.com -e ST
 Running in local (don't forget to add the following in your /etc/hosts file : `127.0.0.1 server.domain.local`
 ```
 docker run --name some-name -e PROTO=http -e SERVER_NAME=server.domain.local -e STREAM_HOST=server.domain.local -p 80:80 -p 1935:1935 -d pixhub/docker_nginx-rtmp
-
+```
 # How to Stream your Desktop into your container
 
 I've put a ffmpeg2nginx.sh script with options. You can use it to stream your Desktop :
