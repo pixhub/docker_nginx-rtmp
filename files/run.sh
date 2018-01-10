@@ -5,6 +5,7 @@ if [ ! -z $SERVER_NAME ]
 	sed -i -e "s/§SERVER_NAME/$SERVER_NAME/g" /usr/local/nginx/conf/nginx.conf
    else
 	sed -i -e "s/§SERVER_NAME/localhost/g" /usr/local/nginx/conf/nginx.conf
+fi
 
 if [ ! -z $STREAM_HOST ]
    then
