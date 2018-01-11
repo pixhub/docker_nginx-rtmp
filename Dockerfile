@@ -4,7 +4,8 @@ ENV NGINX_VERSION=1.13.7 \
     STREAM_HOST=localhost \
     PROTO=http
 
-RUN adduser -S -D -h /home/nginx
+RUN addgroup -S nginx && \
+    adduser -S -D -h /home/nginx nginx && \
     apk update && \
     apk add \
         build-base \
@@ -35,13 +36,11 @@ RUN adduser -S -D -h /home/nginx
     apk del \
         git \
         build-base \
-        wget
-
-USER nginx
-
-RUN mkdir /home/nginx/HLS && \
-    mkdir /home/nginx/HLS/live \
-    mkdir /home/nginx/video_recordings
+        wget && \
+    mkdir /home/nginx/HLS && \
+    mkdir /home/nginx/HLS/live && \
+    mkdir /home/nginx/video_recordings && \
+    chown -R nginx /home/nginx
 
 COPY files /
 
